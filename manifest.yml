@@ -6,6 +6,4 @@ applications:
   buildpacks:
     - python_buildpack
 
-  env:
-     PIP_CERT: /etc/ssl/certs/ca-certificates.crt
 

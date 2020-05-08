@@ -1,0 +1,7 @@
+In order to deploy to IT managed envs:
+Add the following to manifest.yml
+  env:
+     PIP_CERT: /etc/ssl/certs/ca-certificates.crt
+
+Add the following to requirements.txt
+--index-url=https://dcsartifacts.dell.com/artifactory/api/pypi/python/simple
