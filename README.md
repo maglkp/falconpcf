@@ -15,7 +15,8 @@ Simple backend app template for PCF using Falcon framework for python
 * login to PCF `cf login -a https://api.run.pivotal.io -u user-name-or-email -p pass -s your-pcf-space`
 * space name and all other things can be looked up in console app in browser console.run.pivotal.io 
 * push the app, since this repo defines `manifest.yml` file with required params it's enough to just do `cf push`
-* alternatively provide some explicit params eg. `cf push cf-falcon-app -m 128M --random-route` (route is the app's URL, without random route you may run into conflicts, it is `your-app-name.cfapps.io` by default)
+* alternatively provide some explicit params eg. `cf push cf-falcon-app -m 128M --random-route` (route is the app's URL, without random route you may run into conflicts, it is `your-app-name.cfapps.io` by default, you can also create the route manually in console web app)
+* head over to console and check the state and url of the app eg. https://falcon-py.cfapps.io/test which should respond with the test message 
 
 ### Similar examples
 * https://github.com/vchrisb/cf-HelloWorld
