@@ -1,17 +1,12 @@
 import falcon
-import logging
 
 
 class TestResource(object):
     def on_get(self, req, res):
         """Handles all GET requests."""
-        logging.info('Serving a GET...')
         res.status = falcon.HTTP_200  # This is the default status
         res.body = ('This is me, Falcon, serving a resource!')
 
-
-logging.basicConfig(level=logging.INFO)
-logging.warning('Booting app sample Falcon app...')
 
 # Create the Falcon application object
 app = falcon.API()
