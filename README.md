@@ -5,20 +5,17 @@ Simple backend app template for PCF using Falcon framework for python
 * install git, python and virtualenv `sudo apt-get install virtualenv`
 * create a python 3 virtual env `virtualenv venv -p /usr/bin/python3` (not strictly needed but gives better confidence that app would work in the cloud)
 * activate the environment `source venv/bin/activate` (`venv\Scripts\activate.bat` on windows)
-* install the requirements `pip install -r requirements.txt`
-* run `gunicorn main:app`
+* install the requirements `pip install -r requirements.txt` (can also install gunicorn globally)
+* run `gunicorn main:app`, you can provide more args `gunicorn -b 0.0.0.0:5000 main:app --reload`
+* head over to http://localhost:8000/test (or curl or `http you-url` if you have httpie, highly recommend it)
 
 ## Running in Pivotal Cloud Foundry
 * install cf cli (command line utils to interact with PCF) https://github.com/cloudfoundry/cli#downloads or https://docs.cloudfoundry.org/cf-cli/install-go-cli.html
 * create an account in Pivotal https://run.pivotal.io/
-
-## Instructions
-* Clone this repo: 
-* Open a shell and change into the `cf-HelloWorld` folder
-* Login to Cloud Foundry: `cf login`
-  * if using Pivotal Web Services use `api.run.pivotal.io` as the target
-* Modify the application name in `manifest.yml` to be unique
-* push the application to Cloud Foundry with: `cf push`
+* login to PCF `cf login -a https://api.run.pivotal.io -u user-name-or-email -p pass -s your-pcf-space`
+* space name and all other things can be looked up in console app in browser console.run.pivotal.io 
+* push the app, since this repo defines `manifest.yml` file with required params it's enough to just do `cf push`
+* alternatively provide some explicit params eg. `cf push cf-falcon-app -m 128M --random-route` (route is the app's URL, without random route you may run into conflicts, it is `your-app-name.cfapps.io` by default)
 
 ### Similar examples
 * https://github.com/vchrisb/cf-HelloWorld
