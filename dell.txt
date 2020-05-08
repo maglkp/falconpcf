@@ -1,3 +1,4 @@
+[ignore it if not a Dell employee]
 In order to deploy to IT managed envs:
 Add the following to manifest.yml
   env:
