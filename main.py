@@ -12,7 +12,7 @@ class TestResource(object):
         print(str(type(req.media)))
         logging.info("received a GET")
         res.status = falcon.HTTP_200  # This is the default status
-        res.body = ('This is me, Falcon, serving a resource!')
+        res.body = 'This is me, Falcon, serving a resource!'
 
 
 # Create the Falcon application object
