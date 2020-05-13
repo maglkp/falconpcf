@@ -1,7 +1,9 @@
-import falcon
 import logging
 
+import falcon
+
 logging.basicConfig(level=logging.INFO)
+
 
 class TestResource(object):
     def on_get(self, req, res):
