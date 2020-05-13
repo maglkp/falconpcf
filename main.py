@@ -1,5 +1,4 @@
 import logging
-
 import falcon
 
 logging.basicConfig(level=logging.INFO)
